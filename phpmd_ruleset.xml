@@ -32,14 +32,14 @@
             <property name="minimum" value="2" />
         </properties>
     </rule>
-    
+
     <rule ref="rulesets/cleancode.xml">
         <!-- else is not always bad. Disabling this as there is no way to differentiate between early return and normal else cases. -->
         <exclude name="ElseExpression" />
         <!-- Static access on Yii::$app is normal in Yii -->
         <exclude name="StaticAccess" />
     </rule>
-    
+
     <rule ref="rulesets/controversial.xml/CamelCaseClassName" />
     <rule ref="rulesets/controversial.xml/CamelCaseMethodName" />
     <rule ref="rulesets/controversial.xml/CamelCaseParameterName" />
