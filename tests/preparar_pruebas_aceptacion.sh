@@ -1,13 +1,10 @@
 #!/bin/sh
 
-echo "Instalando la última versión de ChromeDriver en /usr/local/bin..."
-BIN=chromedriver
-ZIP=${BIN}_linux64.zip
-VERSION=$(curl https://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-curl -O https://chromedriver.storage.googleapis.com/$VERSION/$ZIP
-unzip -o $ZIP
-sudo install -p -o root -g root $BIN /usr/local/bin/$BIN
-rm $BIN $ZIP
+SCRIPT=$(readlink -f "$0")
+DIR=$(dirname "$SCRIPT")
+ACTUAL=$PWD
+cd $DIR/..
+$DIR/descargar_chromedriver.sh
 ACCEPT=tests/acceptance.suite.yml
 if [ -f $ACCEPT ]
 then
@@ -29,4 +26,5 @@ then
 else
     echo "Ya se requiere codeception/codeception en composer.json."
 fi
+cd $ACTUAL
 

@@ -1,5 +1,9 @@
 # Travis CI configuration file.
 
+dist: trusty
+
+# sudo: required
+
 language: php
 
 php:
@@ -10,6 +14,7 @@ services:
 
 addons:
     postgresql: "9.6"
+    chrome: stable
 
 before_install: phpenv config-rm xdebug.ini
 
@@ -20,13 +25,22 @@ before_script:
     - psql -U postgres -c "create database proyecto_test;"
     - psql -U postgres -c "create user proyecto password 'proyecto' superuser;"
     - db/load.sh test
+    - |
+      if [ -f tests/acceptance.suite.yml ]; then
+        tests/descargar_chromedriver.sh
+        tests/ejecutar_pruebas_aceptacion.sh -q
+        sleep 3
+      fi
 
 script:
     - vendor/bin/codecept run
 
-# Cache folder, you can delete cache from Travis CI web interface
-cache:
-    directories:
-        - vendor
-        - $HOME/.composer/cache
+notifications:
+    email: false
+
+# # Cache folder, you can delete cache from Travis CI web interface
+# cache:
+#     directories:
+#         - vendor
+#         - $HOME/.composer/cache
 
