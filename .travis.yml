@@ -34,6 +34,7 @@ before_script:
 
 script:
     - vendor/bin/codecept run
+    - vendor/bin/phpcs
 
 notifications:
     email: false
