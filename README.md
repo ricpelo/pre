@@ -9,7 +9,15 @@ que se utilice [Yii2](http://www.yiiframework.com/),
 Instalación
 -----------
 
-Simplemente copiar todos los archivos en el directorio raíz del proyecto. El
+La mejor manera de usar este repositorio es a través del script `proyecto.sh`
+del repositorio [ricpelo/conf](https://github.com/ricpelo/conf), el cual
+lleva a cabo todos los pasos necesarios para crear un proyecto de trabajo
+usando la [plantilla básica de Yii2](https://github.com/yiisoft/yii2-app-basic),
+volcando encima el contenido de este repositorio y realizando las
+transformaciones y personalizaciones oportunas.
+
+De no ser así, la instalación puede consistir simplemente en copiar encima de
+la plantilla básica todos los archivos en el directorio raíz del proyecto. El
 archivo `README.md` (este que estás leyendo) no es necesario copiarlo, y
 probablemente entrará en conflicto con el del propio proyecto. Si se copia
 encima de este accidentalmente, siempre se puede volver a recuperar con el
