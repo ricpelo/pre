@@ -23,5 +23,8 @@ return [
     'username' => $username,
     'password' => $password,
     'charset' => 'utf8',
+    'on afterOpen' => function ($event) {
+        $event->sender->createCommand("SET intervalstyle = 'iso_8601'");
+    },
 ];
 
