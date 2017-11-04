@@ -9,13 +9,13 @@ then
     then
         cd $DIR/..
         echo "Ejecutando chromedriver --url-base=/wd/hub ..."
-        $DIR/chromedriver --url-base=/wd/hub &
+        $DIR/chromedriver --url-base=/wd/hub > /dev/null &
         echo "Ejecutando ./yii serve ..."
-        if [ "$1" = "-q" ]
+        if [ "$1" = "-v" ]
         then
-            ./yii serve 2>/dev/null &
-        else
             ./yii serve &
+        else
+            ./yii serve > /dev/null 2>&1 &
         fi
         cd $ACTUAL
     else
