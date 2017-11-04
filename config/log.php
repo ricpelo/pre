@@ -24,4 +24,3 @@ if (YII_ENV_PROD) {
 }
 
 return $out;
-

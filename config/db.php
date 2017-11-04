@@ -27,9 +27,8 @@ $out = [
 
 if (isset($config)) {
     $out['on afterOpen'] = function ($event) {
-        $event->sender->createCommand("SET intervalstyle = 'iso_8601'"); 
+        $event->sender->createCommand("SET intervalstyle = 'iso_8601'");
     };
 }
 
 return $out;
-
