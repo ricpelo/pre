@@ -27,8 +27,8 @@ before_script:
     - db/load.sh test
     - |
       if [ -f tests/acceptance.suite.yml ]; then
-        tests/descargar_chromedriver.sh
-        tests/ejecutar_pruebas_aceptacion.sh -q
+        tests/download-chromedriver.sh
+        tests/run-acceptance.sh -q
         sleep 3
       fi
 

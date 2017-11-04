@@ -4,7 +4,7 @@ SCRIPT=$(readlink -f "$0")
 DIR=$(dirname "$SCRIPT")
 ACTUAL=$PWD
 cd $DIR/..
-$DIR/descargar_chromedriver.sh
+$DIR/download-chromedriver.sh
 ACCEPT=tests/acceptance.suite.yml
 if [ -f $ACCEPT ]
 then
