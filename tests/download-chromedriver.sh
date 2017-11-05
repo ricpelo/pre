@@ -6,9 +6,14 @@ CHROME="chromedriver"
 SN="S"
 if [ -f "$DIR/$CHROME" ]
 then
-    echo -n "El archivo $CHROME ya existe. ¿Desea descargar la última versión? (s/N): "
-    read SN
-    [ "$SN" = "s" ] && SN="S"
+    if [ "$1" = "-q" ]
+    then
+        SN="N"
+    else
+        echo -n "El archivo $CHROME ya existe. ¿Desea descargar la última versión? (s/N): "
+        read SN
+        [ "$SN" = "s" ] && SN="S"
+    fi
 fi
 if [ "$SN" = "S" ]
     then
@@ -19,3 +24,4 @@ if [ "$SN" = "S" ]
     unzip -o $DIR/$ZIP -d $DIR
     rm $DIR/$ZIP
 fi
+

@@ -4,15 +4,21 @@ SCRIPT=$(readlink -f "$0")
 DIR=$(dirname "$SCRIPT")
 ACTUAL=$PWD
 cd $DIR/..
-$DIR/download-chromedriver.sh
+$DIR/download-chromedriver.sh -q
 ACCEPT=tests/acceptance.suite.yml
+SN="S"
 if [ -f $ACCEPT ]
 then
-    echo -n "El archivo $ACCEPT ya existe. ¿Desea sobreescribirlo? (s/N): "
-    read SN
-    [ "$SN" = "n" ] && SN="N"
+    if [ "$1" = "-q" ]
+    then
+        SN="N"
+    else
+        echo -n "El archivo $ACCEPT ya existe. ¿Desea sobreescribirlo? (s/N): "
+        read SN
+        [ "$SN" = "s" ] && SN="S"
+    fi
 fi
-if [ "$SN" != "N" ]
+if [ "$SN" = "S" ]
 then
     echo "Copiando $ACCEPT.example sobre $ACCEPT..."
     cp -f $ACCEPT.example $ACCEPT

@@ -22,15 +22,11 @@ install:
     - composer install --no-interaction
 
 before_script:
-    - psql -U postgres -c "create database proyecto_test;"
-    - psql -U postgres -c "create user proyecto password 'proyecto' superuser;"
+    - db/create.sh travis
     - db/load.sh test
-    - |
-      if [ -f tests/acceptance.suite.yml ]; then
-        tests/download-chromedriver.sh
-        tests/run-acceptance.sh -q
-        sleep 3
-      fi
+    - tests/download-chromedriver.sh
+    - tests/run-acceptance.sh
+    - sleep 3
 
 script:
     - vendor/bin/codecept run
