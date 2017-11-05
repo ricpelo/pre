@@ -22,6 +22,7 @@ install:
     - composer install --no-interaction
 
 before_script:
+    - echo "date.timezone = 'UTC'" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
     - db/create.sh travis
     - db/load.sh test
     - tests/download-chromedriver.sh
