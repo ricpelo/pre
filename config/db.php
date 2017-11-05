@@ -17,18 +17,14 @@ if (($url = getenv('DATABASE_URL')) !== false) {
     $password = 'proyecto';
 }
 
-$out = [
+return [
     'class' => 'yii\db\Connection',
     'dsn' => "pgsql:host=$host;port=$port;dbname=$dbname",
     'username' => $username,
     'password' => $password,
     'charset' => 'utf8',
-];
-
-if (isset($config)) {
-    $out['on afterOpen'] = function ($event) {
-        $event->sender->createCommand("SET intervalstyle = 'iso_8601'");
+    'on afterOpen' => function ($event) {
+        // $event->sender refers to the DB connection
+        $event->sender->createCommand("SET intervalstyle = 'iso_8601'")->execute();
     };
-}
-
-return $out;
+];
