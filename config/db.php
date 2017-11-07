@@ -8,6 +8,12 @@ if (($url = getenv('DATABASE_URL')) !== false) {
     $dbname = substr($config['path'], 1);
     $username = $config['user'];
     $password = $config['pass'];
+    $extra = [
+        // Schema cache options (for production environment)
+        //'enableSchemaCache' => true,
+        //'schemaCacheDuration' => 60,
+        //'schemaCache' => 'cache',
+    ];
 } else {
     // Configuración para entorno local:
     $host = 'localhost';
@@ -15,6 +21,7 @@ if (($url = getenv('DATABASE_URL')) !== false) {
     $dbname = 'proyecto';
     $username = 'proyecto';
     $password = 'proyecto';
+    $extra = [];
 }
 
 return [
@@ -27,4 +34,4 @@ return [
         // $event->sender refers to the DB connection
         $event->sender->createCommand("SET intervalstyle = 'iso_8601'")->execute();
     };
-];
+] + $extra;
