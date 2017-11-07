@@ -33,4 +33,3 @@ else
     echo "Ya se requiere codeception/codeception en composer.json."
 fi
 cd $ACTUAL
-

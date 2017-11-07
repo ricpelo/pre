@@ -23,4 +23,3 @@ else
         echo "$LINE" >> $FILE
     fi
 fi
-

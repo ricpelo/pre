@@ -24,4 +24,3 @@ if [ "$SN" = "S" ]
     unzip -o $DIR/$ZIP -d $DIR
     rm $DIR/$ZIP
 fi
-

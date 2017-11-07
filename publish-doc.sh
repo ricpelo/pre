@@ -5,4 +5,3 @@ vendor/bin/apidoc api commands,components,controllers,assets,models,views docs/a
 vendor/bin/apidoc guide guia docs --pageTitle="Guía del proyecto" --guidePrefix= --apiDocs=./api --interactive=0
 ln -sf README.html docs/index.html
 touch docs/.nojekyll
-
