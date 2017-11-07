@@ -8,7 +8,7 @@ $out = [
 if (YII_ENV_PROD) {
     $out['targets'] = [
         [
-            'class' => 'jones\herokulogger\HerokuTarget',
+            'class' => 'app\components\HerokuTarget',
             'levels' => ['error', 'warning', 'info'],
             'exportInterval' => 1,
             'logVars' => [],
