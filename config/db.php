@@ -33,5 +33,5 @@ return [
     'on afterOpen' => function ($event) {
         // $event->sender refers to the DB connection
         $event->sender->createCommand("SET intervalstyle = 'iso_8601'")->execute();
-    };
+    },
 ] + $extra;
