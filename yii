@@ -20,9 +20,9 @@ require(__DIR__ . '/vendor/autoload.php');
 require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
 
 Yii::$classMap['yii\apidoc\templates\project\ApiRenderer'] =
-    '@app/yii2-apidoc/templates/project/ApiRenderer.php';
+    '@app/apidoc/templates/project/ApiRenderer.php';
 Yii::$classMap['yii\apidoc\templates\project\GuideRenderer'] =
-    '@app/yii2-apidoc/templates/project/GuideRenderer.php';
+    '@app/apidoc/templates/project/GuideRenderer.php';
 
 $config = require(__DIR__ . '/config/console.php');
 
