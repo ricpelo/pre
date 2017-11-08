@@ -2,6 +2,8 @@
 
 dist: trusty
 
+sudo: false
+
 language: php
 
 php:
@@ -11,14 +13,10 @@ services:
     - postgresql
 
 addons:
+    postgresql: "9.6"
     chrome: stable
 
-before_install:
-    - phpenv config-rm xdebug.ini
-    - sudo apt-get update
-    - sudo apt-get install language-pack-es
-    - sudo /etc/init.d/postgresql stop
-    - sudo /etc/init.d/postgresql start 9.6
+before_install: phpenv config-rm xdebug.ini
 
 install:
     - composer install --no-interaction
