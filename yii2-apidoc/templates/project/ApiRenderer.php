@@ -37,18 +37,18 @@ class ApiRenderer extends \yii\apidoc\templates\bootstrap\ApiRenderer
             $this->controller->stdout('generating extension index files...');
         }
 
-		$types = array_merge($context->classes, $context->interfaces, $context->traits);
+        $types = array_merge($context->classes, $context->interfaces, $context->traits);
 
-		$appTypes = $this->filterTypes($types, 'app');
+        $appTypes = $this->filterTypes($types, 'app');
 
-		// It's a hack, but we'll go with it for now.
-		$readme = @file_get_contents($this->readmeUrl);
-		$indexFileContent = $this->renderWithLayout($this->indexView, [
-			'docContext' => $context,
-			'types' => $appTypes ?: null,
-			'readme' => $readme ?: null,
-		]);
+        // It's a hack, but we'll go with it for now.
+        $readme = @file_get_contents($this->readmeUrl);
+        $indexFileContent = $this->renderWithLayout($this->indexView, [
+            'docContext' => $context,
+            'types' => $appTypes ?: null,
+            'readme' => $readme ?: null,
+        ]);
 
-		file_put_contents($targetDir . '/index.html', $indexFileContent);
+        file_put_contents($targetDir . '/index.html', $indexFileContent);
     }
 }

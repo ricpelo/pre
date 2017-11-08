@@ -15,8 +15,8 @@ addons:
 
 before_install:
     - phpenv config-rm xdebug.ini
-    - sudo apt update
-    - sudo apt install language-pack-es
+    - sudo apt-get update
+    - sudo apt-get install language-pack-es
     - sudo /etc/init.d/postgresql stop
     - sudo /etc/init.d/postgresql start 9.6
 
@@ -24,7 +24,6 @@ install:
     - composer install --no-interaction
 
 before_script:
-    - echo "date.timezone = 'UTC'" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
     - db/create.sh travis
     - db/load.sh test
     - tests/download-chromedriver.sh
@@ -43,4 +42,3 @@ notifications:
 #     directories:
 #         - vendor
 #         - $HOME/.composer/cache
-
