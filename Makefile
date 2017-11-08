@@ -1,4 +1,4 @@
-.PHONY: all test cs codecept pre_codecept post_codecept run_codecept fastcs fast phpcs
+.PHONY: all test cs codecept pre_codecept post_codecept run_codecept fastcs fast phpcs docs
 
 all: test
 
@@ -27,3 +27,5 @@ fast:
 phpcs:
 	vendor/bin/phpcs
 
+docs:
+	./publish-docs.sh
