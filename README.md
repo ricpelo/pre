@@ -27,7 +27,7 @@ el nuevo.
 
 Se recomienda descargar el repositorio en forma de archivo `.zip` y no clonarlo
 con `git clone`. Para ello, basta con acceder a
-https://github.com/ricpelo/pre/archive/master.zip, lo que descargará el
+https://github.com/ricpelo/proyecto/archive/master.zip, lo que descargará el
 archivo comprimido que luego se podrá extraer dentro del directorio del
 proyecto, sobreescribiendo los archivos necesarios.
 
