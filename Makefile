@@ -1,4 +1,4 @@
-.PHONY: all test cs codecept pre_codecept post_codecept run_codecept fastcs fast phpcs docs
+.PHONY: all test cs codecept pre_codecept post_codecept run_codecept fastcs fast phpcs docs api guia guide
 
 all: test
 
@@ -29,3 +29,11 @@ phpcs:
 
 docs:
 	./publish-docs.sh
+
+api:
+	./publish-docs.sh -a
+
+guia:
+	./publish-docs.sh -g
+
+guide: guia
