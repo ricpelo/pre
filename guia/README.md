@@ -8,15 +8,25 @@ Descripción general
 
 * [Descripción general](descripcion.md)
 
+  * [Funcionalidad principal de la aplicación](descripcion.md#funcionalidad-principal-de-la-aplicacion)
+  * [Objetivos generales](descripcion.md#objetivos-generales)
+  * [URL del repositorio](descripcion.md#url-del-repositorio)
+  * [URL de la documentación](descripcion.md#url-de-la-documentacion)
+
 Instrucciones de instalación y despliegue
 -----------------------------------------
 
 * [Instrucciones de instalación y despliegue](instalacion.md)
 
+  * [En local](instalacion.md#en-local)
+  * [En la nube](instalacion.md#en-la-nube)
+
 Catálogo de requisitos
 ----------------------
 
 * [Catálogo de requisitos](requisitos.md)
+
+  * [Cuadro resumen](requisitos.md#cuadro-resumen)
 
 Manual de usuario
 -----------------
@@ -37,6 +47,9 @@ Diagramas
 ---------
 
 * [Diagramas](diagramas.md)
+
+  * [Diagramas de clases](diagramas.md#diagramas-de-clases)
+  * [Diagramas de estructura lógica de datos](diagramas.md#diagramas-de-estructura-logica-de-datos)
 
 Glosario de términos
 --------------------
