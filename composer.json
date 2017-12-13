@@ -26,7 +26,7 @@
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
         "yiisoft/yii2-shell": "dev-master",
-        "yiisoft/yii2-apidoc": "~2.1.0",
+        "yiisoft/yii2-apidoc": "dev-master",
 
         "codeception/codeception": "^2.2.3",
         "codeception/verify": "~0.3.1",
@@ -68,6 +68,10 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ricpelo/yii2-apidoc"
         }
     ]
 }
