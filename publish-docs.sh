@@ -4,12 +4,12 @@ BASE_DIR=$(dirname $(readlink -f "$0"))
 
 api()
 {
-    ./yii api .,vendor/yiisoft/yii2 docs/api --pageTitle="API del proyecto" --guide=.. --guidePrefix= --exclude="docs,vendor,tests,yii2-apidoc" --interactive=0 --template="project" --readmeUrl="file://$BASE_DIR/guia/README-api.md"
+    vendor/bin/apidoc api .,vendor/yiisoft/yii2 docs/api --pageTitle="API del proyecto" --guide=.. --guidePrefix= --exclude="docs,vendor,tests,yii2-apidoc" --interactive=0 --template="project" --readmeUrl="file://$BASE_DIR/guia/README-api.md"
 }
 
 guide()
 {
-    ./yii guide guia docs --pageTitle="Guía del proyecto" --guidePrefix= --apiDocs=./api --interactive=0 --template="project"
+    vendor/bin/apidoc guide guia docs --pageTitle="Guía del proyecto" --guidePrefix= --apiDocs=./api --interactive=0 --template="project"
     ln -sf README.html docs/index.html
     rm docs/README-api.html
 }
