@@ -1,3 +1,6 @@
+ESTE REPOSITORIO ESTÁ OBSOLETO Y NO SE MANTENDRÁ MÁS. SE CONSERVA SÓLO POR MOTIVOS HISTÓRICOS. SE RECOMIENDA USAR EN SU LUGAR LA PLANTILLA BÁSICA MODIFICADA ALOJADA EN https://github.com/ricpelo/yii2-app-basic.
+===================================================================================================================================================================================================================
+
 Archivos preparatorios para proyectos
 =====================================
 
